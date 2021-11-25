@@ -1,1 +1,15 @@
-<h2>Hello, <%= @trainer.name %>
+<h2>Hello, <%= @trainer.trainer_name.capitalize %>!</h2>
+
+<br><br><br>
+
+<ul>
+    <% @pokemons.each do |p| %>
+        <li><a href="/pokemons/<%= p.slug %>"> <%= p.name %></a></li>
+        <br><br>
+    <% end %>
+</ul>
+
+
+<br><br><br><br>
+
+<p><a href="/pokemons/new">Create a new Pokemon here</a>

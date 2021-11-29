@@ -1,20 +1,5 @@
 class TrainersController < ApplicationController
 
-    get '/trainers/:slug' do
-        @trainer = Trainer.find_by_slug(params[:slug])
-        @pokemons = Pokemon.all
-        erb :'trainers/show'
-    end
-    
-    get '/trainers/:slug/edit' do
-        @trainer = Trainer.find_by_slug(params[:slug])
-        if logged_in? && session[:user_id] == @trainer.id
-            erb :'trainers/index'
-        else 
-            redirect "/trainers/:slug"
-        end
-    end
-
     get '/signup' do
         if !logged_in?
             erb :'trainers/new', locals: {message: "Please create an account before signing in."}
@@ -51,6 +36,46 @@ class TrainersController < ApplicationController
             redirect "/trainers/#{@trainer.slug}"
         else
             erb :'trainers/login', locals: {message: "Email and/or password is incorrect! Please check credentials and try again."}
+        end
+    end
+
+    get '/trainers/:slug' do
+        @trainer = Trainer.find_by_slug(params[:slug])
+        @pokemons = Pokemon.all
+        erb :'trainers/show'
+    end
+
+    get '/trainers/:slug/info' do
+        @trainer = Trainer.find_by_slug(params[:slug])
+        if logged_in? 
+            erb :'trainers/index'
+        else
+            redirect "/trainers/#{@trainer.slug}"
+        end
+    end
+    
+    get '/trainers/:slug/edit' do
+        @trainer = Trainer.find_by_slug(params[:slug])
+        if logged_in? && session[:user_id] == @trainer.id
+            erb :'trainers/edit'
+        else 
+            redirect "/trainers/:slug"
+        end
+    end
+
+    patch '/trainers/:slug' do
+        if params[:trainer_name] == "" || params[:gender] == "" || params[:email] == "" || params[:password] == ""
+            @trainer = Trainer.find_by_slug(params[:slug])
+            erb :'trainers/edit', locals: {message: "You are missing important account information!"}
+            
+        else
+            @trainer = Trainer.find_by_slug(params[:slug])
+            @trainer.trainer_name = params[:trainer_name]
+            @trainer.gender = params[:gender]
+            @trainer.email = params[:email]
+            @trainer.password = params[:password]
+            @trainer.save
+            redirect "/trainers/#{@trainer.slug}"
         end
     end
 

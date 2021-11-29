@@ -1,0 +1,32 @@
+<h2>Hello, <%= @trainer.trainer_name.capitalize %>!</h2>
+<h3>Edit your account information below</h3>
+
+<br><br><br>
+
+<% unless locals.empty? %>
+    <%= message %>
+<% end %>
+
+<br><br>
+
+<form method="POST" action="/trainers/<%=@trainer.slug%>">
+<input id="hidden" type="hidden" name="_method" value="PATCH">
+    <label>Trainer Name: </label>
+        <input type="text" id="trainer_name" name="trainer_name" value="<%=@trainer.trainer_name%>">
+        <br><br>
+    <label>Gender: </label>
+        <input type="text" id="gender" name="gender" value="<%=@trainer.gender%>">
+        <br><br>
+    <label>Email: </label>
+        <input type="text" id="email" name="email" value="<%=@trainer.email%>">
+        <br><br>
+    <label>Password: </label>
+        <input type="text" id="text" name="text" value="<%=@trainer.password%>">
+        <br><br>
+    <input type="submit" name="submit" value="Update">
+</form>
+
+
+<br><br><br><br>
+
+<p><a href="/trainers/<%=@trainer.slug%>">Cancel Edit</a></p>

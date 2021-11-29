@@ -1,0 +1,19 @@
+<h2>All Pokemon</h2>
+
+<br><br><br>
+
+<ul>
+    <% @pokemons.each do |p| %>
+        <li><a href="/pokemons/<%= p.slug %>"> <%= p.name %></a></li>
+        <br><br>
+    <% end %>
+</ul>
+
+
+<br><br><br>
+
+<p><a href="/pokemons/new">Create a new Pokemon</a>
+
+<br><br><br><br>
+
+<p><a href="/trainers/<%=@trainer.slug%>">Trainer Page</a></p>

@@ -1,0 +1,22 @@
+<h2> <%= @pokemon.name %> </h2>
+
+
+<br><br>
+
+<% if @pokemon.nickname != nil %>
+    <p>Nickname: <%= @pokemon.nickname %></p>
+    <br><br>
+<% end %>
+<p>Type: <%= @pokemon.type1 %></p>
+<br><br>
+<% if @pokemon.type2 != nil %>
+    <p>Type: <%= @pokemon.type2 %></p>
+<% end %>
+
+<br><br><br>
+
+<p><a href="/pokemons/<%=@pokemon.slug%>/edit">Edit Pokemon</a></p>
+
+<br><br><br><br>
+
+<p><a href="/pokemons/<%=@pokemon.slug%>/delete">Delete Pokemon</a></p>

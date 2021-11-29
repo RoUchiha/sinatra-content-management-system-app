@@ -10,7 +10,12 @@ class ApplicationController < Sinatra::Base
     end
 
     get '/' do
-        erb :index
+        if logged_in?
+            @trainer = Trainer.find_by_id(session[:user_id])
+            redirect "/trainers/#{@trainer.slug}"
+        else
+            erb :index
+        end
     end
 
     helpers do

@@ -1,7 +1,9 @@
 <h2>Hello, <%= @trainer.trainer_name.capitalize %>!</h2>
 
 <br><br>
-    <a href="/trainers/<%= @trainer.slug %>/info">
+    <% if logged_in? && session[:user_id] == @trainer.id %>
+        <a href="/trainers/<%= @trainer.slug %>/edit">Edit Trainer Info</a>
+    <% end %>
 <br><br><br>
 
 <ul>

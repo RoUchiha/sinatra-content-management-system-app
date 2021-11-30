@@ -1,20 +1,20 @@
-<h2> <%= @pokemon.name %> </h2>
+<h2> <%= @pokemon.name.capitalize %> </h2>
 
 
 <br>
 
 <% if @pokemon.nickname != nil %>
-    <p>Nickname: <%= @pokemon.nickname %></p>
+    <p>Nickname: <%= @pokemon.nickname.capitalize %></p>
     <br>
 <% end %>
-<p>Type: <%= @pokemon.type1 %></p>
+<p>Type: <%= @pokemon.type1.capitalize %></p>
 <br>
-<% if @pokemon.type2 != nil %>
-    <p>Type: <%= @pokemon.type2 %></p>
+<% if @pokemon.type2 != "" %>
+    <p>Type: <%= @pokemon.type2.capitalize %></p>
 <% end %>
 <br>
-<% if @pokemon.best_buddy == true %>
-    <p>BEST BUDDY c: </p>
+<% if @pokemon.best_buddy != false %>
+    <p> BEST BUDDY c: </p>
 <% end %>
 
 <br><br><br>

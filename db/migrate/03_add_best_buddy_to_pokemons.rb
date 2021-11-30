@@ -1,4 +1,4 @@
-class AddBuddyToPokemons < ActiveRecord::Migration[4.2]
+class AddBestBuddyToPokemons < ActiveRecord::Migration[4.2]
 
     def change 
         add_column :pokemons, :best_buddy, :boolean, default: false

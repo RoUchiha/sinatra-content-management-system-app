@@ -63,13 +63,12 @@ class TrainersController < ApplicationController
         end
     end
 
-    patch '/trainers/:slug' do
+    patch '/trainers/edit' do
         if params[:trainer_name] == "" || params[:gender] == "" || params[:email] == "" || params[:password] == ""
-            @trainer = Trainer.find_by_slug(params[:slug])
+            @trainer = Trainer.find(session[:user_id])
             erb :'trainers/edit', locals: {message: "You are missing important account information!"}
-            
         else
-            @trainer = Trainer.find_by_slug(params[:slug])
+            @trainer = Trainer.find(session[:user_id])
             @trainer.trainer_name = params[:trainer_name]
             @trainer.gender = params[:gender]
             @trainer.email = params[:email]

@@ -1,14 +1,16 @@
 <h2>Hello, <%= @trainer.trainer_name.capitalize %>!</h2>
 
+<br><br>
 
 <p>Gender: <%= @trainer.gender %></p>
-<br><br>
+<br>
 <p>Email: <%= @trainer.email %></p>
-<br><br>
-<p>Password: <%= @trainer.password %></p>
+
 
 <br><br><br>
 
-<button><a href="/trainers/<%=@trainer.slug%>/edit">Edit Account Info</a></button>
+<button><a href="/trainers/<%=@trainer.slug%>">Back to Pokemon Team</a></button>
+
+<!-- <button><a href="/trainers/<%=@trainer.slug%>/edit">Edit Account Info</a></button> -->
 
 <!-- delete edit methods from trainer controller/views -->

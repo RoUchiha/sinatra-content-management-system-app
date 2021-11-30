@@ -9,10 +9,10 @@
 
 <br><br>
 
-<form method="POST" action="/trainers/<%=@trainer.slug%>">
+<form method="POST" action="/trainers/edit">
 <input id="hidden" type="hidden" name="_method" value="PATCH">
     <label>Trainer Name: </label>
-        <input type="text" id="trainer_name" name="trainer_name" value="<%=@trainer.trainer_name%>">
+        <input type="text" id="trainer_name" name="trainer_name" value="<%= @trainer.trainer_name %>">
         <br><br>
     <label>Gender: </label>
         <input type="text" id="gender" name="gender" value="<%=@trainer.gender%>">

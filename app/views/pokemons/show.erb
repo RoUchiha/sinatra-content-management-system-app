@@ -1,18 +1,18 @@
 <h2> <%= @pokemon.name %> </h2>
 
 
-<br><br>
+<br>
 
 <% if @pokemon.nickname != nil %>
     <p>Nickname: <%= @pokemon.nickname %></p>
-    <br><br>
+    <br>
 <% end %>
 <p>Type: <%= @pokemon.type1 %></p>
-<br><br>
+<br>
 <% if @pokemon.type2 != nil %>
     <p>Type: <%= @pokemon.type2 %></p>
 <% end %>
-<br><br>
+<br>
 <% if @pokemon.best_buddy == true %>
     <p>BEST BUDDY c: </p>
 <% end %>

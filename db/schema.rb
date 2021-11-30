@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 4) do
     t.string "name"
     t.string "nickname"
     t.string "type1"
+    t.integer "trainer_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "best_buddy", default: false

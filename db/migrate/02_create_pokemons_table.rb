@@ -5,6 +5,7 @@ class CreatePokemonsTable < ActiveRecord::Migration[4.2]
             t.string :name
             t.string :nickname
             t.string :type1
+            t.integer :trainer_id
 
             t.timestamps null: false
         end

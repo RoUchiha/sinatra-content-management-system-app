@@ -26,7 +26,7 @@ Specs:
 - [ ] Ensure that users can't modify content created by other users
     -
 
-- [ ] Include user input validations
+- [x] Include user input validations
     -
 
 - [ ] BONUS - not required - Display validation 

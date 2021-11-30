@@ -2,7 +2,7 @@
 
 <br><br>
     <% if logged_in? %>
-        <p><a href="/trainers/<%= @trainer.slug %>/info">Trainer Info</a></p>
+        <button><a href="/trainers/<%= @trainer.slug %>/info">Trainer Info</a></button>
     <% end %>
 <br><br><br>
 
@@ -18,4 +18,4 @@
 
 <br><br><br><br>
 
-<p><a href="/pokemons/new">Create a new Pokemon</a>
+<button><a href="/pokemons/new">Create a new Pokemon</a></button>

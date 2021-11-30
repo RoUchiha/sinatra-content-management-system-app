@@ -4,17 +4,17 @@
 
         <h2>Welcome, <% current_user.trainer_name %>!</h2><br>
 
-        <a href="/pokemons/new"> Add a new Pokemon to your team </a>
+        <button><a href="/pokemons/new"> Add a new Pokemon to your team </a></button>
         <br><br>
-        <a href="/trainers/:slug"> View your Pokemon team </a>
+        <button><a href="/trainers/:slug"> View your Pokemon team </a></button>
         <br><br><br><br>
         
 
     <% else %>
         <h2>Hello, Trainer!</h2>
-        <a href="/login">Log In </a>
+        <button><a href="/login">Log In </a></button>
         <br><br>
-        <a href="/signup">Sign Up </a>
+        <button><a href="/signup">Sign Up </a></button>
     
     <% end %>
 

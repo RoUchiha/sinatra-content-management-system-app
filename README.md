@@ -1,4 +1,4 @@
-<h1 align="center">Welcome to sinatra-content-management-system-app 👋</h1>
+<h1 align="center">Welcome to my Flatiron Phase 2 Portfolio Project 👋</h1>
 <p>
   <a href="https://github.com/RoUchiha/sinatra-content-management-system-app/blob/main/LICENSE.md" target="_blank">
     <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" />

@@ -20,10 +20,10 @@ Specs:
 - [x] Include user accounts with unique login attribute (username or email)
     - email is required for sign up / login
 
-- [ ] Ensure that the belongs_to resource has routes for Creating, Reading, Updating and Destroying
+- [x] Ensure that the belongs_to resource has routes for Creating, Reading, Updating and Destroying
     -
 
-- [ ] Ensure that users can't modify content created by other users
+- [x] Ensure that users can't modify content created by other users
     -
 
 - [x] Include user input validations

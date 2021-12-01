@@ -17,6 +17,7 @@ Step 1.
 
 Step 2.
     - Fork and clone or download the project file
+    
     - Go to terminal and run:
         ```
         $ bundle install

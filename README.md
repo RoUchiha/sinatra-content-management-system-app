@@ -10,12 +10,16 @@
 ## Usage
 
 Step 1.
+
     ```
     $ gem install bundler
     ```
+    
     * [Bundler](https://bundler.io/)
 
+
 Step 2.
+
     - Fork and clone or download the project file
     
     - Go to terminal and run:
@@ -23,12 +27,16 @@ Step 2.
         $ bundle install
         ```
 
+
 Step 3.
+
     ```
     $ shotgun 
     ```
     
+    
 Step 4.
+
     - visit http://localhost:9393/
 
 

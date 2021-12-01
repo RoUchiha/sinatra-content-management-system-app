@@ -29,7 +29,9 @@
 
 <br><br><br><br>
 
-<button><a href="/pokemons/<%=@pokemon.slug%>/delete">Delete Pokemon</a></button>
+<% if @pokemon.trainer_id == @trainer.id %>
+    <button><a href="/pokemons/<%=@pokemon.slug%>/delete">Delete Pokemon</a></button>
+<% end %>
 
 <br><br><br><br><br><br><br><br><br>
 

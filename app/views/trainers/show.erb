@@ -7,11 +7,14 @@
 <br><br><br>
 
 <h3>Your Pokemon Team</h3>
-<br><br>
+    <button><a href="/pokemons">View All Pokemon</a></button>
+<br><br><br>
 <ul>
     <% @pokemons.each do |p| %>
-        <li><a href="/pokemons/<%= p.slug %>"> <%= p.name %></a></li>
-        <br><br>
+        <% if p.trainer_id == @trainer.id %>
+            <li><a href="/pokemons/<%= p.slug %>"> <%= p.name %></a></li>
+            <br><br>
+        <% end %>
     <% end %>
 </ul>
 

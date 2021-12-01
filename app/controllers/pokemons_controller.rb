@@ -62,6 +62,32 @@ class PokemonsController < ApplicationController
     patch '/pokemons/:slug' do
         @pokemon = Pokemon.find_by_slug(params[:slug])
         @trainer = Trainer.find(session[:user_id])
+        if params[:name] == "" || params[:type1] == ""
+            erb :'pokemons/edit', locals: {message: "Please fill out at least the Pokemon's name and primary type!"}
+            redirect "/pokemons/#{@pokemon.slug}/edit"
+        else
+            @pokemon.name = params[:name]
+            @pokemon.nickname = params[:nickname]
+            @pokemon.type1 = params[:type1]
+            @pokemon.type2 = params[:type2]
+            @pokemon.save 
+            redirect "/pokemons/#{@pokemon.slug}"
+        end
+    end
+
+    get '/pokemons/:slug/delete' do
+        @pokemon = Pokemon.find_by_slug(params[:slug])
+        @trainer = Trainer.find(session[:user_id])
+        if logged_in? 
+            if @pokemon.trainer_id == @trainer.id
+                @pokemon.delete
+                redirect "/pokemons"
+            else
+                redirect "/pokemons"
+            end
+        else
+            redirect "/"
+        end
     end
 
 end

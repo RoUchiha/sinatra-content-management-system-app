@@ -2,6 +2,7 @@ class Trainer < ActiveRecord::Base
 
     has_many :pokemons
     validates_presence_of :email, :password, :trainer_name, :gender
+    
     has_secure_password
 
     def slug

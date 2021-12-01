@@ -11,6 +11,7 @@ class TrainersController < ApplicationController
     post '/signup' do
         if params[:trainer_name] == "" || params[:gender] == "" || params[:email] == "" || params[:password] == ""
             erb :'trainers/new', locals: {message: "Please fill out all fields!"}
+        
         else
             @trainer = Trainer.new(:trainer_name => params[:trainer_name], :gender => params[:gender], :email => params[:email], :password => params[:password])
             @trainer.save

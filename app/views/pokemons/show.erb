@@ -1,7 +1,13 @@
 <h2> <%= @pokemon.name.capitalize %> </h2>
 
 
-<br>
+<br><br>
+
+<% unless locals.empty? %>
+    <%= message %>
+<% end %>
+
+<br><br>
 
 <% if @pokemon.nickname != "" %>
     <p>Nickname: <%= @pokemon.nickname.capitalize %></p>

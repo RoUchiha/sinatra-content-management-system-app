@@ -1,0 +1,27 @@
+<h2>Edit your Pokemon</h2>
+
+<br><br><br><br>
+
+<% unless locals.empty? %>
+    <%= message %>
+<% end %>
+
+<br><br><br><br>
+
+<form method="POST" action="/pokemons/<%=@pokemon.slug%>">
+    <input type="hidden" id="hidden" name="_method" value="PATCH">
+
+    <label>Name: </label>
+        <input type="text" id="name" name="name" value="<%=@pokemon.name%>">
+        <br><br>
+    <label>Nickname: </label>
+        <input type="text" id="nickname" name="nickname" value="<%=@pokemon.nickname%>">
+        <br><br>
+    <label>Primary Type: </label>
+        <input type="text" id="type1" name="type1" value="<%=@pokemon.type1%>">
+        <br><br>
+    <label>Secondary Type (if applicable): </label>
+        <input type="text" id="type2" name="type2" value="<%=@pokemon.type2%>">
+        <br><br><br>
+    <input type="submit" id="submit" value="Finish Editing Pokemon">
+</form>

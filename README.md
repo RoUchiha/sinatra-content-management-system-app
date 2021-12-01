@@ -26,6 +26,7 @@ Step 3.
     ```
     $ shotgun 
     ```
+    
 Step 4.
     - visit http://localhost:9393/
 

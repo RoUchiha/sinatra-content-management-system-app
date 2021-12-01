@@ -3,7 +3,7 @@
 
 <br>
 
-<% if @pokemon.nickname != nil %>
+<% if @pokemon.nickname != "" %>
     <p>Nickname: <%= @pokemon.nickname.capitalize %></p>
     <br>
 <% end %>
@@ -13,9 +13,9 @@
     <p>Type: <%= @pokemon.type2.capitalize %></p>
 <% end %>
 <br>
-<% if @pokemon.best_buddy != false %>
+<!-- <% if @pokemon.best_buddy != false %>
     <p> BEST BUDDY c: </p>
-<% end %>
+<% end %> -->
 
 <br><br><br>
 

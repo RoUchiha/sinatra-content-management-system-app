@@ -16,7 +16,7 @@ class PokemonsController < ApplicationController
             @trainer = Trainer.find(session[:user_id])
             erb :'pokemons/new'
         else
-            
+            redirect "/"
         end
     end
 

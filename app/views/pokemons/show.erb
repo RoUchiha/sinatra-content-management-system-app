@@ -1,11 +1,17 @@
+<% unless locals.empty? %>
+    <h3><%= message %></h3>
+<% end %>
+
+<br><br>
+
 <h2> <%= @pokemon.name.capitalize %> </h2>
+
 
 
 <br><br>
 
-<% unless locals.empty? %>
-    <%= message %>
-<% end %>
+<% @owner = Trainer.find_by_id(@pokemon.trainer_id) %>
+<p>Trainer: <a href="/trainers/<%= @owner.slug %>/info"> <%=@owner.trainer_name.capitalize%></a></p>
 
 <br><br>
 

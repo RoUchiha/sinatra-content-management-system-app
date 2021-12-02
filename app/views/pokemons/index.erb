@@ -5,7 +5,7 @@
 <ul>
     <% @pokemons.each do |p| %> 
         <% if p.trainer_id == @trainer.id %>
-            <li><a href="/pokemons/<%= p.slug %>"> <%= p.name %> (Trainer: You)</a></li>
+            <li><a href="/pokemons/<%= p.slug %>"> <%= p.name %> [ Trainer: You (<%=p.trainer.trainer_name%>) ]</a></li>
             <br><br>
         <% else %>
             <li><a href="/pokemons/<%= p.slug %>"> <%= p.name %> (Trainer: <%=p.trainer.trainer_name.capitalize%>)</a></li>

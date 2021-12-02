@@ -15,7 +15,7 @@ class PokemonsController < ApplicationController
     
     get '/pokemons/new' do
         if logged_in?
-            @trainer = Trainer.find(session[:user_id])
+            @trainer = Trainer.find_by_id(session[:user_id])
             erb :'pokemons/new'
         else
             redirect "/"
@@ -24,9 +24,9 @@ class PokemonsController < ApplicationController
 
     post '/pokemons' do
         if params[:name] == "" || params[:type1] == ""
-            erb :'pokemons/new', locals: {message: "Please fill out at least Name and Type!"}
+            erb :'pokemons/new', locals: {message: "Please fill out at least Name and Primary Type!"}
         else
-            @trainer = Trainer.find(session[:user_id])
+            @trainer = Trainer.find_by_id(session[:user_id])
             @pokemon = Pokemon.new(name: params[:name], nickname: params[:nickname], type1: params[:type1], type2: params[:type2], trainer_id: @trainer.id)
             
             @pokemon.save

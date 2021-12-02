@@ -16,7 +16,7 @@ class PokemonsController < ApplicationController
     get '/pokemons/new' do
         if logged_in?
             @trainer = Trainer.find_by_id(session[:user_id])
-            erb :'pokemons/new'
+            erb :'pokemons/new', locals: {message: "Please fill out at least Name and Primary Type!"}
         else
             redirect "/"
         end
@@ -24,7 +24,7 @@ class PokemonsController < ApplicationController
 
     post '/pokemons' do
         if params[:name] == "" || params[:type1] == ""
-            erb :'pokemons/new', locals: {message: "Please fill out at least Name and Primary Type!"}
+             redirect '/pokemons/new'
         else
             @trainer = Trainer.find_by_id(session[:user_id])
             @pokemon = Pokemon.new(name: params[:name], nickname: params[:nickname], type1: params[:type1], type2: params[:type2], trainer_id: @trainer.id)
@@ -50,7 +50,7 @@ class PokemonsController < ApplicationController
         @trainer = Trainer.find(session[:user_id])
         if logged_in? 
             if @pokemon.trainer_id == @trainer.id
-                erb :'pokemons/edit'
+                erb :'pokemons/edit', locals: {message: "Please fill out at least Name and Primary Type!"}
             else
                 erb :'pokemons/show', locals: {message: "Sorry, this Pokemon does not belong to your team!"}
             end

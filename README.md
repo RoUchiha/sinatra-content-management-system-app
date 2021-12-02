@@ -1,4 +1,4 @@
-<h1 align="center">Welcome to sinatra-content-management-system-app 👋</h1>
+<h1 align="center">Welcome to my Flatiron Phase 2 Portfolio Project 👋</h1>
 <p>
   <a href="https://github.com/RoUchiha/sinatra-content-management-system-app/blob/main/LICENSE.md" target="_blank">
     <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
@@ -10,23 +10,33 @@
 ## Usage
 
 Step 1.
+
     ```
     $ gem install bundler
     ```
+    
     * [Bundler](https://bundler.io/)
 
+
 Step 2.
+
     - Fork and clone or download the project file
+    
     - Go to terminal and run:
         ```
         $ bundle install
         ```
 
+
 Step 3.
+
     ```
     $ shotgun 
     ```
+    
+    
 Step 4.
+
     - visit http://localhost:9393/
 
 

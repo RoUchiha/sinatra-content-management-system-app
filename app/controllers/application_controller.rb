@@ -18,6 +18,13 @@ class ApplicationController < Sinatra::Base
         end
     end
 
+    get '/about' do
+        if logged_in?
+            @trainer = Trainer.find_by_id(session[:user_id])
+        end
+        erb :about
+    end
+
     helpers do
         
         def logged_in?

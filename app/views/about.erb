@@ -1,0 +1,5 @@
+<% if logged_in? %>
+    <p>Thanks for being a member, <%=@trainer.trainer_name%></p>
+<% else %>
+    <p><a href="/">Please login or signup</a></p>
+<%end%>
